@@ -8,7 +8,7 @@ A reproducible Python / Jupyter pipeline that turns raw 128-channel EEG into sin
 
 ## Research question
 
-> Can single-trial EEG/ERP features (P300 amplitude, frontal theta power) predict the reaction time of that trial?
+> Can single-trial EEG/ERP features (P300 amplitude, theta power) predict the reaction time of that trial?
 
 The Multi-Source Interference Task (MSIT) creates conflict between what is seen and the response required.
 Harder conditions give slower reactions, and both the P300 and frontal theta are known markers of

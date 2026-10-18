@@ -34,9 +34,6 @@ Mean RT per condition (all trials, from the exploratory analysis):
 | F0 | 3777 | 672 | 146 |
 | FS | 3943 | 741 | 175 |
 
-RT rises as conflict is added, which is the expected interference effect.
-<!-- TODO: re-run section 4 with all 42 subjects (the RT table currently excludes sub-29) and update this table -->
-
 ## Pipeline
 
 All steps are in `nencki-symfonia-pipeline.ipynb`. Each step saves its result per subject, so a re-run skips finished subjects.
@@ -68,7 +65,6 @@ trials the response is already made before 0.6 s and the feature would partly me
 
 The **prediction model is not part of this version.** A first exploratory run showed that condition explains most of what
 is predictable, and that the early EEG features added little. The features are being improved before the model is reported.
-<!-- TODO: add model results here once re-run on all subjects -->
 
 ## Repository structure
 

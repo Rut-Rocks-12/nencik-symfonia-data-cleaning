@@ -1,0 +1,22 @@
+# raw and intermediate EEG data (tens of GB, re-created by the notebook)
+data/*
+!data/features/
+ds004621-main/
+trimmed_eeg/
+*.fif
+*.fif.gz
+*.eeg
+*.vhdr
+*.vmrk
+ 
+ 
+# python / jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+ 
+# OS
+.DS_Store
+Thumbs.db
+ 

@@ -39,7 +39,7 @@ RT rises as conflict is added, which is the expected interference effect.
 
 ## Pipeline
 
-All steps are in `SP_Project_cleaned.ipynb`. Each step saves its result per subject, so a re-run skips finished subjects.
+All steps are in `nencki-symfonia-pipeline.ipynb`. Each step saves its result per subject, so a re-run skips finished subjects.
 
 | # | Step | Parameters | Info |
 |---|---|---|---|

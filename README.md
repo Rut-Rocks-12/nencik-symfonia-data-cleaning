@@ -41,18 +41,17 @@ RT rises as conflict is added, which is the expected interference effect.
 
 All steps are in `SP_Project_cleaned.ipynb`. Each step saves its result per subject, so a re-run skips finished subjects.
 
-| # | Step | Parameters | Why |
+| # | Step | Parameters | Info |
 |---|---|---|---|
 | 1 | Download | NEMAR, MSIT only | The full dataset is far larger than the task needs |
-| 2 | Band-pass filter | 0.1-30 Hz, FIR (firwin), zero-phase | Removes slow drift and high-frequency noise, keeps theta and P300 |
-| 3 | Crop dead time | first to last task event, 1 s buffer | Filter first on the whole recording, so filter edge effects fall in the removed part |
-| 4 | Downsample | 1000 to 250 Hz | 4x less data. Safe because the signal was low-passed at 30 Hz before (checked: r = 0.998 at Pz for sub-01) |
-| 5 | ICA blink removal | 20 components, fitted on a 1 Hz high-passed copy (cleaning is applied to the 250 Hz, 0.1-30 Hz data), blink found automatically using Fp1 as EOG proxy | The dataset has no EOG channel. Blinks are the largest artifact. Slow drift stops ICA from converging, hence the 1 Hz copy |
-| 6 | Re-reference | average reference, FCz re-created | FCz was the online reference and is not recorded |
-| 7 | Epoching + RT matching | -0.8 to +1.2 s around each stimulus, baseline -0.2 to 0 s, reject epochs above 150 uV peak-to-peak | Each epoch is one trial. Stimuli are at least 1.73 s apart, so epochs do not overlap |
-| 8 | Wavelet transform | Morlet, 3-30 Hz, dB versus -0.5 to -0.2 s | Shows when theta changes, which an ERP cannot |
-| 9 | Channel selection | top 5 channels by group-mean P300 and theta | RT is never used, so the choice is not circular |
-| 10 | Feature extraction | early window P300 0.3-0.4 s, theta 0.2-0.4 s (also literature windows for comparison) | See the window choice below |
+| 2 | Band-pass filter | 0.1-30 Hz | Removes slow drift and high-frequency noise |
+| 3 | Crop dead time | first to last task event, 1 s buffer | Filter first on the whole recording |
+| 4 | Downsample | 1000 to 250 Hz | 4x less data. |
+| 5 | ICA blink removal | 20 components, blink found using Fp1 as EOG proxy | Blinks are the largest artifact. |
+| 6 | Re-reference | average reference ||
+| 7 | Epoching + RT matching | -0.8 to +1.2 s around each stimulus| Each epoch is one trial. Stimuli are at least 1.73 s apart, so epochs do not overlap |
+| 8 | Wavelet transform | Morlet wave transform | Shows when theta changes |
+| 9 | Channel selection | top 5 channels by group-mean P300 and theta | |
 
 ### The window choice
 

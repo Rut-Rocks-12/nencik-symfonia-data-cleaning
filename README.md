@@ -103,7 +103,7 @@ The notebook creates all of these folders itself, so nothing has to be set up by
 - **Per-subject checkpoints:** each stage saves one file per subject and skips it on the next run.
 - **Parallel:** subjects are independent, so they run in parallel with `joblib` (2 workers for filtering and ICA, 3 for the rest).
 - **Seed:** ICA uses a fixed random seed (`rng=42`).
-- **Explicit parameters:** every parameter that matters (windows, thresholds, frequency range, ICA settings) is a named constant in the config cell or next to the function that uses it.
+- **Explicit parameters:** every parameter that matters (windows, thresholds, frequency range, ICA settings) is a named constant in the config cell. 
 
 ## Next steps
 

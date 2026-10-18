@@ -57,8 +57,6 @@ All steps are in `SP_Project_cleaned.ipynb`. Each step saves its result per subj
 
 Literature P300 windows are about 0.3-0.6 s. In this data the median RT is about 604 ms, so in about half of the
 trials the response is already made before 0.6 s and the feature would partly measure the movement.
-The main features therefore use an **early window** that ends before the response in 97.6% of trials.
-The literature windows are kept as a comparison.
 
 ## Results so far
 
@@ -98,28 +96,14 @@ The notebook creates all of these folders itself, so nothing has to be set up by
    pip install -r requirements.txt
    ```
 2. **Open `SP_Project_cleaned.ipynb` and run it from top to bottom.** No settings files or passwords are needed,
-   because the dataset is public and the notebook downloads it. All settings are in the config cell at the top:
-   - **Quick test:** set `FIRST_SUBJECT, LAST_SUBJECT = 1, 3` (default is all subjects, `1, 42`).
-   - **Full run:** the raw MSIT EEG is about 27 GB, and ICA is the slowest step.
-   - **Out of memory?** Lower `N_JOBS` and `N_JOBS_HEAVY` (number of subjects processed in parallel).
-
+   because the dataset is public and the notebook downloads it. All settings are in the config cell at the top.
+   
 ## Reproducibility
 
 - **Per-subject checkpoints:** each stage saves one file per subject and skips it on the next run.
 - **Parallel:** subjects are independent, so they run in parallel with `joblib` (2 workers for filtering and ICA, 3 for the rest).
 - **Seed:** ICA uses a fixed random seed (`rng=42`).
 - **Explicit parameters:** every parameter that matters (windows, thresholds, frequency range, ICA settings) is a named constant in the config cell or next to the function that uses it.
-
-## Limitations
-
-- Fp1 is used as a stand-in for an EOG channel, and only one blink component is removed. Muscle and horizontal eye movements can remain.
-- FCz (the online reference) is re-created, so it is an estimate, not a recording.
-- The early P300 window covers only the first part of the P300 wave and ignores its latency.
-- Wavelet power at 4-5 Hz can include some of the slow evoked response, so theta is not a perfectly clean oscillation measure.
-- Channels are chosen with all subjects (RT is never used), and top 5 is an arbitrary cut-off.
-- The 150 uV rejection threshold is strict across about 120 channels. One subject (sub-16) had no usable epochs.
-- Error trials are not excluded, and RT uses the first button press only.
-- Epoch times are rounded to the 4 ms sampling grid (up to 2 ms jitter).
 
 ## Next steps
 

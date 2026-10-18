@@ -91,7 +91,7 @@ The notebook creates all of these folders itself, so nothing has to be set up by
    source .venv/bin/activate        # Windows: .venv\Scripts\activate
    pip install -r requirements.txt
    ```
-2. **Open `SP_Project_cleaned.ipynb` and run it from top to bottom.** No settings files or passwords are needed,
+2. **Open `nencki-symfonia-pipeline.ipynb` and run it from top to bottom.** No settings files or passwords are needed,
    because the dataset is public and the notebook downloads it. All settings are in the config cell at the top.
    
 ## Reproducibility

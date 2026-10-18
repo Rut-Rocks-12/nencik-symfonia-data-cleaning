@@ -1,0 +1,19 @@
+{
+  "p300_roi": [
+    "PPO1h",
+    "PPO2h",
+    "P2",
+    "Pz",
+    "PO3"
+  ],
+  "theta_roi": [
+    "FCz",
+    "FCC1h",
+    "C1",
+    "Cz",
+    "FCC2h"
+  ],
+  "top_n": 5,
+  "theta_increase_present": true,
+  "n_subjects": 41
+}

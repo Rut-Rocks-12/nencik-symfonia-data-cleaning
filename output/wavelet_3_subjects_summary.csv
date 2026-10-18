@@ -1,0 +1,4 @@
+subject,speed,n_trials,median_rt_ms,theta_all,theta_00,theta_S0,theta_F0,theta_FS,FS_minus_00
+sub-11,fastest,387,508,2.09,2.33,1.33,2.52,2.0,-0.33
+sub-33,middle,404,603,-0.06,-0.13,-0.89,0.28,0.55,0.68
+sub-30,slowest,400,709,2.02,1.43,2.55,2.5,1.57,0.14

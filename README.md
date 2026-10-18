@@ -74,7 +74,7 @@ is predictable, and that the early EEG features added little. The features are b
 
 ```
 .
-├── SP_Project_cleaned.ipynb   # the full pipeline
+├── nencki-symfonia-pipeline.ipynb   # the full pipeline
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
